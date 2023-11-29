@@ -34,6 +34,22 @@ public class AlunoCursoController {
         return ResponseEntity.status(HttpStatus.OK).body(alunoCursoService.buscarPorId(id));
     }
 
+//    @PutMapping("/{id}")
+//    public ResponseEntity<Object> atualizaAlunoCurso(@PathVariable(value = "id") Long id, @RequestBody AlunoCurso alunoCurso) {
+//
+//        Optional<AlunoCurso> alunoCurso1 = alunoCursoService.atualizaAlunoCurso(id);
+//
+//        if(alunoCurso1.isEmpty()){
+//            return ResponseEntity.status(HttpStatus.OK).body("Não localizado!");
+//        }
+//
+//        AlunoCurso alunoCurso2 = alunoCurso1.get();
+//        alunoCurso2.setAluno(alunoCurso.getAluno());
+//        alunoCurso2.setCurso(alunoCurso.getCurso());
+//
+//        return ResponseEntity.status(HttpStatus.OK).body(alunoCursoService.atualizaAlunoCurso(alunoCurso2));
+//    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Object> deletarAlunoCurso(@PathVariable(value = "id") Long id) {
 

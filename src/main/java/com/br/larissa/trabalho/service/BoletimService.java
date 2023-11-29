@@ -26,6 +26,10 @@ public class BoletimService {
         return boletimRepository.findById(id);
     }
 
+    public Optional<Boletim> atualizaBuscaId(Long id){
+        return boletimRepository.findById(id);
+    }
+
     public void deletarBoletim(Optional<Boletim> boletim){
         boletimRepository.delete(boletim.get());
     }

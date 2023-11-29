@@ -32,21 +32,26 @@ public class AlunoController {
         return ResponseEntity.status(HttpStatus.OK).body(alunoService.buscarPorId(matricula));
     }
 
-//    @PutMapping("/{id}")
-//    public ResponseEntity<Object> atu(@PathVariable(value = "id") Long id, @RequestBody Pessoa p1) {
-//
-//        Optional<Pessoa> p = pessoaService.buscaPessoa(id);
-//        if (p.isEmpty()) {
-//            return ResponseEntity.status(HttpStatus.OK).body("Não localizado !");
-//        }
-//
-//        Pessoa pessoa = p.get();
-//        pessoa.setNome(p1.getNome());
-//        pessoa.setCpf(p1.getCpf());
-//        //BeanUtils.copyProperties(p1, pessoa);
-//        return ResponseEntity.status(HttpStatus.OK).body(pessoaService.gravaPessoa(pessoa));
-//
-//    }
+    @PutMapping("/{matricula}")
+    public ResponseEntity<Object> atualizaAluno(@PathVariable(value = "matricula") String matricula, @RequestBody Aluno aluno) {
+
+        Optional<Aluno> aluno1 = alunoService.atualizaBuscaId(matricula);
+
+        if(aluno1.isEmpty()){
+            return ResponseEntity.status(HttpStatus.OK).body("Não localizado!");
+        }
+
+        Aluno aluno2 = aluno1.get();
+        aluno2.setMatricula(aluno.getMatricula());
+        aluno2.setNomeAluno(aluno.getNomeAluno());
+        aluno2.setIdade(aluno.getIdade());
+        aluno2.setEmail(aluno.getEmail());
+        aluno2.setTelefone(aluno.getTelefone());
+        aluno2.setSexo(aluno.getSexo());
+        aluno2.setData_nascimento(aluno.getData_nascimento());
+
+        return ResponseEntity.status(HttpStatus.OK).body(alunoService.gravarAluno(aluno2));
+    }
 
     @DeleteMapping("/{matricula}")
     public ResponseEntity<Object> deletaAluno(@PathVariable(value = "matricula") String matricula) {

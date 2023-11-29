@@ -28,6 +28,10 @@ public class AlunoCursoService {
         return alunoCursoRepository.findById(id);
     }
 
+    public Optional<AlunoCurso> atualizaAlunoCurso(Long id){
+        return alunoCursoRepository.findById(id);
+    }
+
     public void deletarAlunoCurso(Optional<AlunoCurso> alunoCurso){
         alunoCursoRepository.delete(alunoCurso.get());
     }

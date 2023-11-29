@@ -26,6 +26,10 @@ public class AlunoService {
         return alunoRepository.findById(matricula);
     }
 
+    public Optional<Aluno> atualizaBuscaId(String matricula){
+        return alunoRepository.findById(matricula);
+    }
+
     public void deletarAluno(Optional<Aluno> aluno){
         alunoRepository.delete(aluno.get());
     }

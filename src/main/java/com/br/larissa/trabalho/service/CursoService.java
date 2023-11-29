@@ -28,6 +28,10 @@ public class CursoService {
         return cursoRepository.findById(matricula);
     }
 
+    public Optional<Curso> atualizaBuscaId(Long id){
+        return cursoRepository.findById(id);
+    }
+
     public void deletarCurso(Optional<Curso> curso){
         cursoRepository.delete(curso.get());
     }

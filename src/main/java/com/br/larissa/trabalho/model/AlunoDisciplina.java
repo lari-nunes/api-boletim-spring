@@ -1,14 +1,12 @@
 package com.br.larissa.trabalho.model;
 
-
 import jakarta.persistence.*;
 
 import java.io.Serializable;
-import java.util.List;
 
-@Entity(name = "aluno_curso")
-@Table(name = "aluno_curso")
-public class AlunoCurso implements Serializable {
+@Entity(name = "aluno_disciplina")
+@Table(name = "aluno_disciplina")
+public class AlunoDisciplina implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,11 +17,10 @@ public class AlunoCurso implements Serializable {
     private Aluno aluno;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "curso_id")
-    private Curso curso;
+    @JoinColumn(name = "disciplina_id")
+    private Disciplina disciplina;
 
-
-    public AlunoCurso() {
+    public AlunoDisciplina() {
     }
 
     public Long getId() {
@@ -42,11 +39,11 @@ public class AlunoCurso implements Serializable {
         this.aluno = aluno;
     }
 
-    public Curso getCurso() {
-        return curso;
+    public Disciplina getDisciplina() {
+        return disciplina;
     }
 
-    public void setCurso(Curso curso) {
-        this.curso = curso;
+    public void setDisciplina(Disciplina disciplina) {
+        this.disciplina = disciplina;
     }
 }

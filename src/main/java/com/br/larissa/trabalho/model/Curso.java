@@ -23,7 +23,6 @@ public class Curso implements Serializable {
 
     @OneToMany
     @JoinColumn(name = "curso_id")
-    @JsonIgnore
     @Cascade(org.hibernate.annotations.CascadeType.ALL)
     private List<Disciplina> disciplinas;
 
@@ -45,6 +44,7 @@ public class Curso implements Serializable {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
 
     public List<Disciplina> getDisciplinas() {
         return disciplinas;

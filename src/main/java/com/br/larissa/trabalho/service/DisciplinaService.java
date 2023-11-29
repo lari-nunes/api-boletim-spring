@@ -28,6 +28,10 @@ public class DisciplinaService {
         return disciplinaRepository.findById(id);
     }
 
+    public Optional<Disciplina> buscaIdAutor(Long id){
+        return disciplinaRepository.findById(id);
+    }
+
     public void deletarDisciplina(Optional<Disciplina> disciplina){
         disciplinaRepository.delete(disciplina.get());
     }
