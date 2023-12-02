@@ -19,6 +19,8 @@ public class Boletim implements Serializable {
     private Long id;
     private String status;
 
+    private Double nota;
+
     @ManyToOne
     @JoinColumn(name = "aluno_id")
     private Aluno aluno;

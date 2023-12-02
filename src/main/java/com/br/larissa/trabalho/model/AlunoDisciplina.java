@@ -15,7 +15,6 @@ public class AlunoDisciplina implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Double nota;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "aluno_id")
@@ -34,14 +33,6 @@ public class AlunoDisciplina implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Double getNota() {
-        return nota;
-    }
-
-    public void setNota(Double nota) {
-        this.nota = nota;
     }
 
     public Aluno getAluno() {

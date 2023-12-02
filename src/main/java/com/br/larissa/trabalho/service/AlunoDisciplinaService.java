@@ -16,10 +16,6 @@ public class AlunoDisciplinaService {
 
     public AlunoDisciplina gravarAlunoDisciplina(AlunoDisciplina alunoDisciplina){
 
-        if (alunoDisciplina.getNota() < 0 || alunoDisciplina.getNota() > 10) {
-            throw new IllegalArgumentException("A nota do aluno deve estar entre 0 e 100.");
-        }
-
         return alunoDisciplinaRepository.save(alunoDisciplina);
     }
 

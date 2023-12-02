@@ -46,7 +46,6 @@ public class AlunoDisciplinaController {
         AlunoDisciplina alunoDisciplina2 = alunoDisciplina1.get();
         alunoDisciplina2.setAluno(alunoDisciplina.getAluno());
         alunoDisciplina2.setDisciplina(alunoDisciplina.getDisciplina());
-        alunoDisciplina2.setNota(alunoDisciplina.getNota());
 
         return ResponseEntity.status(HttpStatus.OK).body(alunoDisciplinaService.gravarAlunoDisciplina(alunoDisciplina2));
     }
