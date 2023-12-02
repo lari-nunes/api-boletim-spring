@@ -1,19 +1,23 @@
 package com.br.larissa.trabalho.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
 
 @Entity(name = "boletim")
 @Table(name = "boletim")
 @Data
+@AllArgsConstructor
+@EqualsAndHashCode
 public class Boletim implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Double nota;
+    private String status;
 
     @ManyToOne
     @JoinColumn(name = "aluno_id")
@@ -34,12 +38,12 @@ public class Boletim implements Serializable {
         this.id = id;
     }
 
-    public Double getNota() {
-        return nota;
+    public String getStatus() {
+        return status;
     }
 
-    public void setNota(Double nota) {
-        this.nota = nota;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public Aluno getAluno() {

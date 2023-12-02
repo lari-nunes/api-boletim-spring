@@ -6,50 +6,33 @@ import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
 
-@Entity(name = "aluno_disciplina")
-@Table(name = "aluno_disciplina")
+@Entity(name = "curso_disciplina")
+@Table(name = "curso_disciplina")
 @AllArgsConstructor
 @EqualsAndHashCode
-public class AlunoDisciplina implements Serializable {
+public class CursoDisciplina implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Double nota;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "aluno_id")
-    private Aluno aluno;
+    @JoinColumn(name = "curso_id")
+    private Curso curso;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "disciplina_id")
     private Disciplina disciplina;
 
-    public AlunoDisciplina() {
+    public CursoDisciplina() {
     }
 
-    public Long getId() {
-        return id;
+    public Curso getCurso() {
+        return curso;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Double getNota() {
-        return nota;
-    }
-
-    public void setNota(Double nota) {
-        this.nota = nota;
-    }
-
-    public Aluno getAluno() {
-        return aluno;
-    }
-
-    public void setAluno(Aluno aluno) {
-        this.aluno = aluno;
+    public void setCurso(Curso curso) {
+        this.curso = curso;
     }
 
     public Disciplina getDisciplina() {

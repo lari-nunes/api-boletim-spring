@@ -1,6 +1,7 @@
 package com.br.larissa.trabalho.controller;
 
 
+import com.br.larissa.trabalho.model.Boletim;
 import com.br.larissa.trabalho.model.Curso;
 import com.br.larissa.trabalho.model.Disciplina;
 import com.br.larissa.trabalho.service.DisciplinaService;
@@ -33,6 +34,23 @@ public class DisciplinaController {
     public ResponseEntity<Object> disciplinaId(@PathVariable(value = "id") Long id) {
         return ResponseEntity.status(HttpStatus.OK).body(disciplinaService.buscarPorId(id));
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Object> atualizaDisciplina(@PathVariable(value = "id") Long id, @RequestBody Disciplina disciplina) {
+
+        Optional<Disciplina> disciplina1 = disciplinaService.buscarPorId(id);
+
+        if(disciplina1.isEmpty()){
+            return ResponseEntity.status(HttpStatus.OK).body("Disciplina não localizada!");
+        }
+
+        Disciplina disciplina2 = disciplina1.get();
+        disciplina2.setNome(disciplina.getNome());
+        disciplina2.setCurso(disciplina.getCurso());
+
+        return ResponseEntity.status(HttpStatus.OK).body(disciplinaService.gravarDisciplina(disciplina2));
+    }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Object> deletarDisciplina(@PathVariable(value = "id") Long id) {

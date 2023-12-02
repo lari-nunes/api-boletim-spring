@@ -22,11 +22,11 @@ public class AlunoService {
         return alunoRepository.findAll();
     }
 
-    public Optional<Aluno> buscarPorId(String matricula){
+    public Optional<Aluno> buscarPorId(Long matricula){
         return alunoRepository.findById(matricula);
     }
 
-    public Optional<Aluno> atualizaBuscaId(String matricula){
+    public Optional<Aluno> atualizaBuscaId(Long matricula){
         return alunoRepository.findById(matricula);
     }
 

@@ -44,7 +44,6 @@ public class CursoController {
 
         Curso curso2 = curso1.get();
         curso2.setNome(curso2.getNome());
-        curso2.setDisciplinas(curso2.getDisciplinas());
 
         return ResponseEntity.status(HttpStatus.OK).body(cursoService.gravarCurso(curso2));
     }

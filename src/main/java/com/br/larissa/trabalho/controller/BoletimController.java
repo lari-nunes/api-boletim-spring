@@ -32,6 +32,22 @@ public class BoletimController {
         return ResponseEntity.status(HttpStatus.OK).body(boletimService.buscarPorId(id));
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Object> atualizaBoletim(@PathVariable(value = "id") Long id, @RequestBody Boletim boletim) {
+
+        Optional<Boletim> boletim1 = boletimService.buscarPorId(id);
+
+        if(boletim1.isEmpty()){
+            return ResponseEntity.status(HttpStatus.OK).body("Boletim não localizado!");
+        }
+
+        Boletim boletim2 = boletim1.get();
+        boletim2.setAluno(boletim.getAluno());
+        boletim2.setDisciplina(boletim.getDisciplina());
+
+        return ResponseEntity.status(HttpStatus.OK).body(boletimService.gravarBoletim(boletim2));
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Object> deletarBoletim(@PathVariable(value = "id") Long id) {
 

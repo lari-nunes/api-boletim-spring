@@ -1,13 +1,15 @@
 package com.br.larissa.trabalho.model;
 
-
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
-import java.util.List;
 
 @Entity(name = "aluno_curso")
 @Table(name = "aluno_curso")
+@AllArgsConstructor
+@EqualsAndHashCode
 public class AlunoCurso implements Serializable {
 
     @Id

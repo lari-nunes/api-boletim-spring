@@ -24,7 +24,7 @@ public class Aluno implements Serializable {
     private Long id;
 
     @Column(name = "MATRICULA")
-    private String matricula;
+    private Long matricula;
     @Column(name = "NOME_ALUNO")
     private String nomeAluno;
     @Column(name = "IDADE")
@@ -49,11 +49,11 @@ public class Aluno implements Serializable {
         this.id = id;
     }
 
-    public String getMatricula() {
+    public Long getMatricula() {
         return matricula;
     }
 
-    public void setMatricula(String matricula) {
+    public void setMatricula(Long matricula) {
         this.matricula = matricula;
     }
 

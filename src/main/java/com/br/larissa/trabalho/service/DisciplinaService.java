@@ -1,8 +1,6 @@
 package com.br.larissa.trabalho.service;
 
-import com.br.larissa.trabalho.model.Aluno;
 import com.br.larissa.trabalho.model.Disciplina;
-import com.br.larissa.trabalho.repository.AlunoRepository;
 import com.br.larissa.trabalho.repository.DisciplinaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,7 +26,7 @@ public class DisciplinaService {
         return disciplinaRepository.findById(id);
     }
 
-    public Optional<Disciplina> buscaIdAutor(Long id){
+    public Optional<Disciplina> atualizaDisciplinaId(Long id){
         return disciplinaRepository.findById(id);
     }
 

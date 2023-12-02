@@ -1,15 +1,17 @@
 package com.br.larissa.trabalho.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
 
 @Entity(name = "disciplina")
 @Table(name = "disciplina")
 @Data
+@AllArgsConstructor
+@EqualsAndHashCode
 public class Disciplina implements Serializable {
 
     @Id

@@ -1,8 +1,6 @@
 package com.br.larissa.trabalho.service;
 
-import com.br.larissa.trabalho.model.Aluno;
 import com.br.larissa.trabalho.model.Curso;
-import com.br.larissa.trabalho.repository.AlunoRepository;
 import com.br.larissa.trabalho.repository.CursoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,8 +22,8 @@ public class CursoService {
         return cursoRepository.findAll();
     }
 
-    public Optional<Curso> buscarPorId(Long matricula){
-        return cursoRepository.findById(matricula);
+    public Optional<Curso> buscarPorId(Long id){
+        return cursoRepository.findById(id);
     }
 
     public Optional<Curso> atualizaBuscaId(Long id){

@@ -28,17 +28,17 @@ public class AlunoController {
         return ResponseEntity.status(HttpStatus.OK).body(alunoService.listarAlunos());
     }
     @GetMapping("/{matricula}")
-    public ResponseEntity<Object> alunoId(@PathVariable(value = "matricula") String matricula) {
+    public ResponseEntity<Object> alunoId(@PathVariable(value = "matricula") Long matricula) {
         return ResponseEntity.status(HttpStatus.OK).body(alunoService.buscarPorId(matricula));
     }
 
     @PutMapping("/{matricula}")
-    public ResponseEntity<Object> atualizaAluno(@PathVariable(value = "matricula") String matricula, @RequestBody Aluno aluno) {
+    public ResponseEntity<Object> atualizaAluno(@PathVariable(value = "matricula") Long matricula, @RequestBody Aluno aluno) {
 
         Optional<Aluno> aluno1 = alunoService.atualizaBuscaId(matricula);
 
         if(aluno1.isEmpty()){
-            return ResponseEntity.status(HttpStatus.OK).body("Não localizado!");
+            return ResponseEntity.status(HttpStatus.OK).body("Aluno não encontrado!");
         }
 
         Aluno aluno2 = aluno1.get();
@@ -54,7 +54,7 @@ public class AlunoController {
     }
 
     @DeleteMapping("/{matricula}")
-    public ResponseEntity<Object> deletaAluno(@PathVariable(value = "matricula") String matricula) {
+    public ResponseEntity<Object> deletaAluno(@PathVariable(value = "matricula") Long matricula) {
 
         Optional<Aluno> aluno = alunoService.buscarPorId(matricula);
         if (aluno.isEmpty()) {

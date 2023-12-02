@@ -1,12 +1,9 @@
 package com.br.larissa.trabalho.service;
 
-import com.br.larissa.trabalho.model.Aluno;
 import com.br.larissa.trabalho.model.AlunoCurso;
 import com.br.larissa.trabalho.repository.AlunoCursoRepository;
-import com.br.larissa.trabalho.repository.AlunoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 

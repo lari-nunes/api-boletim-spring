@@ -1,10 +1,9 @@
 package com.br.larissa.trabalho.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.hibernate.annotations.Cascade;
 
 import java.io.Serializable;
@@ -13,18 +12,17 @@ import java.util.List;
 @Entity(name = "curso")
 @Table(name = "curso")
 @Data
-//@JsonIgnoreProperties("disciplinas")
+@AllArgsConstructor
+@EqualsAndHashCode
 public class Curso implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
     private Long id;
+    @Column(name = "NOME")
     private String nome;
 
-    @OneToMany
-    @JoinColumn(name = "curso_id")
-    @Cascade(org.hibernate.annotations.CascadeType.ALL)
-    private List<Disciplina> disciplinas;
 
     public Curso() {
     }
@@ -45,12 +43,4 @@ public class Curso implements Serializable {
         this.nome = nome;
     }
 
-
-    public List<Disciplina> getDisciplinas() {
-        return disciplinas;
-    }
-
-    public void setDisciplinas(List<Disciplina> disciplinas) {
-        this.disciplinas = disciplinas;
-    }
 }
