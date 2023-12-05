@@ -74,5 +74,6 @@ PUT /boletim/{id} - Atualizar um boletim
 
 DELETE /boletim/{id} - Deletar um boletim
 ```
-
+<div align="center">
 Projeto feito por Larissa Nunes ❤️
+</div>
