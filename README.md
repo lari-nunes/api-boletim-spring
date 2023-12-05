@@ -73,3 +73,6 @@ POST /boletim - Criar um novo boletim
 PUT /boletim/{id} - Atualizar um boletim
 
 DELETE /boletim/{id} - Deletar um boletim
+```
+
+Projeto feito por Larissa Nunes ❤️
