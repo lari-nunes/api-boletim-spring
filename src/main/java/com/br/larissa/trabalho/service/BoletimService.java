@@ -16,11 +16,11 @@ public class BoletimService {
 
     public Boletim gravarBoletim(Boletim boletim){
         if (boletim.getNota() == null) {
-            boletim.setStatus("ATIVO"); // Validação do trabalho: Caso o aluno não tenho nota na disciplina seu status é “ativo”;
+            boletim.setStatus("INATIVO"); 
         } else if (boletim.getNota() < 0 || boletim.getNota() > 10) {
             throw new IllegalArgumentException("A nota do aluno deve estar entre 0 e 10.");
         } else {
-            boletim.setStatus("INATIVO");
+            boletim.setStatus("ATIVO");
         }
 
         return boletimRepository.save(boletim);
