@@ -1,6 +1,6 @@
 # API de Boletim Escolar 🏫 
 ## Sobre o projeto
-Esta API permite cadastrar alunos, cursos, disciplinas e notas. Também permite gerar boletins escolares, com o status de aprovação ou reprovação do aluno, levando em consideração a média 7.
+Este projeto é desenvolvendo uma API RESTful que permite cadastrar alunos, cursos, disciplinas e notas. Também permite gerar boletins escolares, com o status de aprovação ou reprovação do aluno, levando em consideração a média 7.
 
 ## Índice
 - [Tecnologias](#tecnologias)
